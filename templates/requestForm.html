@@ -1,5 +1,6 @@
 <form action="/request-form/" method="post">
     {% csrf_token %}
-    {{ form }}
+    {{ consulta_form }}
+    {{ usuario_form }}
     <input type="submit" value="Enviar" />
 </form>

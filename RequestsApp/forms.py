@@ -1,9 +1,15 @@
 from django.forms import ModelForm
 
-from RequestsApp.models import Request
+from RequestsApp.models import Request, Usuario
 
 
-class RequestForm(ModelForm):
+class ConsultaForm(ModelForm):
     class Meta:
         model = Request
-        fields = ['full_name', 'email', 'phone_number']
+        fields = ['interes', 'rubro', 'zona_preferencia', 'tamanho', 'presupuesto', 'formacion']
+
+
+class UsuarioForm(ModelForm):
+    class Meta:
+        model = Usuario
+        fields = ['nombre_completo', 'nacionalidad', 'email', 'nro_telefono', "ocupacion", 'idioma']

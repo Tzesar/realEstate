@@ -1,9 +1,0 @@
-[
-  {
-    "model": "RequestsApp.Pais",
-    "pk": 1,
-    "fields": {
-      "nombre": "Paraguay"
-    }
-  }
-]
