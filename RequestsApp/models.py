@@ -82,6 +82,9 @@ class Usuario(models.Model):
     ocupacion = models.CharField(max_length=20)
     idioma = models.CharField(max_length=25, choices=LANGUAGE_CHOICES)
 
+    def __str__(self):
+        return self.nombre_completo
+
 
 class Request(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
@@ -93,4 +96,7 @@ class Request(models.Model):
     tamanho = models.CharField(max_length=20, choices=SIZE_CHOICES)
     presupuesto = models.CharField(max_length=30, choices=BUDGET_CHOICES)
     formacion = models.CharField(max_length=30, choices=FORMATION_CHOICES)
+
+    def __str__(self):
+        return self.usuario.__str__() + " interes:" + self.interes
 
