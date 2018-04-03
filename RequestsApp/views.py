@@ -9,13 +9,16 @@ def get_cleaned_user(user_form: UsuarioForm):
     usuario_cleaned = user_form.cleaned_data
 
     user_list = Usuario.objects.filter(
-        nro_telefono=usuario_cleaned.get("nro_telefono"),
-        email=usuario_cleaned.get("email")
+        nombre_completo__iexact=usuario_cleaned.get("nombre_completo"),
+        email__iexact=usuario_cleaned.get("email")
     )
 
     if user_list.exists():
         return user_list.first()
     else:
+        user = user_form.save(commit=False)
+        user.email = user.email.lower()
+
         return user_form.save()
 
 
