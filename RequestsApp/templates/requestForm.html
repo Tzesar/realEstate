@@ -1,0 +1,18 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>Real Estate App</title>
+        <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+        <link rel="stylesheet" href="{% static "css/bootstrap-theme.min.css" %}">
+    </head>
+
+    <body>
+    <form action="/request-form/" method="post">
+        {% csrf_token %}
+        {{ consulta_form }}
+        {{ usuario_form }}
+        <input type="submit" value="Enviar" />
+    </form>
+    </body>
+</html>
