@@ -3,8 +3,39 @@
 {% block forms %}
     <form action="/request-form/" method="post">
         {% csrf_token %}
-        {{ consulta_form }}
-        {{ usuario_form }}
+        {{ consulta_form.as_p }}
+
+        {{ usuario_form.non_field_errors }}
+        <div class="form-group">
+            {{ usuario_form.nombre_completo.errors }}
+            {{ usuario_form.nombre_completo.label_tag }}
+            {{ usuario_form.nombre_completo }}
+        </div>
+        <div class="form-group">
+            {{ usuario_form.email.errors }}
+            {{ usuario_form.email.label_tag }}
+            {{ usuario_form.email }}
+        </div>
+        <div class="form-group">
+            {{ usuario_form.nro_telefono.errors }}
+            {{ usuario_form.nro_telefono.label_tag }}
+            {{ usuario_form.nro_telefono }}
+        </div>
+        <div class="form-group">
+            {{ usuario_form.nacionalidad.errors }}
+            {{ usuario_form.nacionalidad.label_tag }}
+            {{ usuario_form.nacionalidad }}
+        </div>
+        <div class="form-group">
+            {{ usuario_form.ocupacion.errors }}
+            {{ usuario_form.ocupacion.label_tag }}
+            {{ usuario_form.ocupacion }}
+        </div>
+        <div class="form-group">
+            {{ usuario_form.idioma.errors }}
+            {{ usuario_form.idioma.label_tag }}
+            {{ usuario_form.idioma }}
+        </div>
         <input type="submit" value="Enviar" />
     </form>
 {% endblock forms %}
