@@ -3,11 +3,42 @@
 {% load bootstrap4 %}
 
 {% block forms %}
-    <form action="/request-form/" method="post">
-        {% csrf_token %}
-        {% bootstrap_form usuario_form %}
+    <div class="container">
+        <form action="/request-form/" method="post">
+            {% csrf_token %}
 
-        {% bootstrap_form consulta_form %}
-        <input type="submit" value="Enviar" />
-    </form>
+            {% bootstrap_form_errors usuario_form type='non_fields' %}
+            {% bootstrap_form_errors consulta_form type='non_fields' %}
+
+            {# Formulario usuario #}
+
+            <div class="form-row">
+                {% bootstrap_field usuario_form.nombre_completo placeholder='Juan Per...' form_group_class='form-group col-md-5' size='sm' %}
+                {% bootstrap_field usuario_form.email placeholder='correo@email.com' form_group_class='form-group col-md-4' size='sm' %}
+                {% bootstrap_field usuario_form.nro_telefono placeholder='+595 9-- --- ---' form_group_class='form-group col-md-3' size='sm' %}
+            </div>
+
+            <div class="form-row">
+                {% bootstrap_field usuario_form.ocupacion placeholder='Agente Inmobiliario' form_group_class='form-group col-md-5' size='sm' %}
+                {% bootstrap_field usuario_form.nacionalidad placeholder='Paraguaya' form_group_class='form-group col-md-5' size='sm' %}
+                {% bootstrap_field usuario_form.idioma form_group_class='form-group col-md-2' size='sm' %}
+            </div>
+
+            {# Formulario consulta inmobiliaria #}
+
+            <div class="form-row">
+                {% bootstrap_field consulta_form.interes placeholder=' ' form_group_class='form-group col-md-4' size='sm' %}
+                {% bootstrap_field consulta_form.rubro placeholder=' ' form_group_class='form-group col-md-4' size='sm' %}
+                {% bootstrap_field consulta_form.zona_preferencia placeholder=' ' form_group_class='form-group col-md-4' size='sm' %}
+            </div>
+
+            <div class="form-row">
+                {% bootstrap_field consulta_form.tamanho placeholder=' ' form_group_class='form-group col-md-4' size='sm' %}
+                {% bootstrap_field consulta_form.presupuesto placeholder=' ' form_group_class='form-group col-md-4' size='sm' %}
+                {% bootstrap_field consulta_form.formacion form_group_class='form-group col-md-4' size='sm' %}
+            </div>
+
+            {% bootstrap_button content='Enviar Consulta' button_type='submit' button_class='btn btn-primary' %}
+        </form>
+    </div>
 {% endblock forms %}
