@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.utils.translation import gettext_lazy as _
+
 BUDGET_CHOICES = (
     ('0-10.000', '0 - 10.000 USD'),
     ('10.000-20.000', '10.000 USD - 20.000 USD'),
@@ -78,9 +80,9 @@ class Usuario(models.Model):
     nombre_completo = models.CharField(max_length=20)
     nacionalidad = models.CharField(max_length=20)
     email = models.EmailField()
-    nro_telefono = models.CharField(max_length=20)
-    ocupacion = models.CharField(max_length=20)
-    idioma = models.CharField(max_length=25, choices=LANGUAGE_CHOICES)
+    nro_telefono = models.CharField(max_length=20, verbose_name=_('nro. de teléfono'))
+    ocupacion = models.CharField(max_length=20, verbose_name=_('ocupación'))
+    idioma = models.CharField(max_length=25, choices=LANGUAGE_CHOICES, blank=False, default='español')
 
     def __str__(self):
         return self.nombre_completo
@@ -89,13 +91,18 @@ class Usuario(models.Model):
 class Request(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
 
-    interes = models.CharField(max_length=20, choices=ACTION_CHOICES)
-    rubro = models.CharField(max_length=30, choices=ACTIVITY_TYPE_CHOICES)
-    zona_preferencia = models.CharField(max_length=20, choices=PREFERENCE_ZONE_CHOICES)
+    interes = models.CharField(max_length=20, choices=ACTION_CHOICES, blank=True, verbose_name=_('interés'))
+
+    rubro = models.CharField(max_length=30, choices=ACTIVITY_TYPE_CHOICES, blank=True)
+    otro_rubro = models.CharField(max_length=50, blank=True)
+
+    zona_preferencia = models.CharField(max_length=20, choices=PREFERENCE_ZONE_CHOICES, blank=True,
+                                        verbose_name=_('zona de preferencia'))
     # Specify that HA means "Hectárea"
-    tamanho = models.CharField(max_length=20, choices=SIZE_CHOICES)
-    presupuesto = models.CharField(max_length=30, choices=BUDGET_CHOICES)
-    formacion = models.CharField(max_length=30, choices=FORMATION_CHOICES)
+    tamanho = models.CharField(max_length=20, choices=SIZE_CHOICES, blank=True, verbose_name=_('tamaño'))
+    presupuesto = models.CharField(max_length=30, choices=BUDGET_CHOICES, blank=True)
+
+    formacion = models.CharField(max_length=30, choices=FORMATION_CHOICES, blank=True, verbose_name=_('formación'))
 
     def __str__(self):
         return self.usuario.__str__() + " interes:" + self.interes

@@ -6,10 +6,12 @@ from RequestsApp.models import Request, Usuario
 class ConsultaForm(ModelForm):
     class Meta:
         model = Request
-        fields = ['interes', 'rubro', 'zona_preferencia', 'tamanho', 'presupuesto', 'formacion']
+        fields = '__all__'
+        localized_fields = '__all__'
 
 
 class UsuarioForm(ModelForm):
     class Meta:
         model = Usuario
-        fields = ['nombre_completo', 'email', 'nro_telefono', 'idioma', 'nacionalidad', 'ocupacion']
+        fields = '__all__'
+        localized_fields = '__all__'
