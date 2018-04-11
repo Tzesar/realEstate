@@ -15,16 +15,18 @@
             {# Formulario usuario #}
 
             <div class="form-row">
-                {% bootstrap_field usuario_form.nombre_completo placeholder='Su nombre' form_group_class='form-group col-md-5' size='sm' %}
-                {% bootstrap_field usuario_form.email placeholder='Su correo electrónico' form_group_class='form-group col-md-4' size='sm' %}
-                {% bootstrap_field usuario_form.nro_telefono placeholder='Su nro. de teléfono' form_group_class='form-group col-md-3' size='sm' %}
+                {% bootstrap_field usuario_form.nombre_completo placeholder='Su nombre' show_label=False form_group_class='form-group col-md-5' size='sm' %}
+                {% bootstrap_field usuario_form.email placeholder='Su correo electrónico' show_label=False form_group_class='form-group col-md-4' size='sm' %}
+                {% bootstrap_field usuario_form.nro_telefono placeholder='Su nro. de teléfono' show_label=False form_group_class='form-group col-md-3' size='sm' %}
             </div>
 
             <div class="form-row">
-                {% bootstrap_field usuario_form.ocupacion placeholder='Su ocupación' form_group_class='form-group col-md-5' size='sm' %}
-                {% bootstrap_field usuario_form.nacionalidad placeholder='Su nacionalidad' form_group_class='form-group col-md-4' size='sm' %}
-                {% bootstrap_field usuario_form.idioma form_group_class='form-group col-md-3' size='sm' %}
+                {% bootstrap_field usuario_form.ocupacion placeholder='Su ocupación' show_label=False form_group_class='form-group col-md-5' size='sm' %}
+                {% bootstrap_field usuario_form.nacionalidad placeholder='Su nacionalidad' show_label=False form_group_class='form-group col-md-4' size='sm' %}
+                {% bootstrap_field usuario_form.idioma show_label=False form_group_class='form-group col-md-3' size='sm' %}
             </div>
+
+            <span></span>
 
             {# Formulario consulta inmobiliaria #}
 

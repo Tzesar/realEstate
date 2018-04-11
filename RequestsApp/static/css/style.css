@@ -563,21 +563,6 @@ footer
     padding: 20px 0px;
 	background-color: #585858; /*fondo del pie de página*/
 }
-.scrollToTop {
-    position: fixed;
-    bottom: 12px;
-    right: 12px;
-    width: 42px;
-    height: 42px;
-    color: #c44618;
-    background: #c44618; 
-    font-size: 14px;
-    line-height: 42px;
-    text-align: center;
-    z-index: 100;
-    cursor: pointer;
-    display: none;
-}
 .white-bg
 {
     background-color: #c44618; /*linea separadora*/
@@ -690,9 +675,6 @@ h2.bnr-sub-title {
 body{
     font-size: 14px; /*texto en general*/
 	}
-.wrap-item h3 { /*no sé */
-    font-size: 18px;
-	}
 .title, .nosotros-title { /*titulo de contenedores*/
     font-size: 28px;
 	}
@@ -705,27 +687,18 @@ body{
 .loction-info{ /*no sé*/
     padding: 0px 15px;
 	}
-.eventos-item figure figcaption { /*no se*/
-    padding: 30px 30px;
-	}
 .padding-right-zero{ /*margenes en imagenes*/
     padding-right: 15px !important;
 	}
-.eventos-item figure p{ /*no sé*/
-    font-size: 34px;
-	}
-.eventos-item figure h2{ /*no sé*/
-    font-size: 18px;
-	}
-.testimonial-item ul li blockquote { /*no se*/
-    font-size: 14px;
-    line-height: 22px;
-    margin: 10px 0;
-    padding: 0 40px;
-	}
-.navbar-default .navbar-nav > li > a{ /*no se*/
-    line-height: 22px;
-    text-align: center;
-	}
 }
-/*---*/
+
+p.footer-class{
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+footer{
+    padding: 20px 0;
+	background-color: #585858;
+}
