@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 {# Load the tag library #}
 {% load bootstrap4 %}
 
@@ -12,11 +14,145 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Real Estate App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Paraguay Connections</title>
+
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.bxslider.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     </head>
 
     <body>
-        {% block forms %}
-        {% endblock forms %}
+        <div class="loader"></div>
+        <div id="myDiv">
+            <!--HEADER-->
+            <div class="header">
+                <div class="bg-color">
+                    <header id="main-header">
+                        <nav class="navbar navbar-default navbar-fixed-top">
+                            <div class="container">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                            data-target="#myNavbar">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <img src="{% static 'img/logopyconnections.png' %}">
+                                </div>
+                                <div class="collapse navbar-collapse" id="myNavbar">
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="active"><a href="#main-header">Inicio</a></li>
+                                        <li class=""><a href="#service">¿Por qué Paraguay?</a></li>
+                                        <li class=""><a href="#contact">Contacto</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </header>
+                    <div class="wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="banner-info text-center wow fadeIn delay-05s">
+                                    <h1 class="bnr-title"><br><br></h1>
+                                    <h2 class="bnr-sub-title"></h2>
+                                    <p class="bnr-para"></p>
+                                    <div class="overlay-detail">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/ HEADER-->
+            <!--SECCIÓN ¿POR QUÉ PARAGUAY?-->
+            <section id="service" class="section-padding wow fadeInUp delay-05s">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h2 class="service-title pad-bt15">¿Por qué Paraguay?</h2>
+                            <p class="sub-title pad-bt15">1. Las tierras en el Paraguay tienen un bajo costo, son fértiles,
+                                tienen una capacidad productiva excepcional e inclusive existen zonas con agua dulce
+                                subterránea.<br>
+                                2. El promedio de la inflación está por debajo de los 4,2% anual en los últimos 10 años.<br>
+                                3. Mantuvo un crecimiento económico sostenible durante los últimos 10 años. <br>
+                                4. Es el cuarto productor mundial de soja en el mundo. <br>
+                                5. Está ubicado estratégicamente en el centro de Sudamérica <br>
+                                6. Tiene baja presión fiscal y cargas sociales <br>
+                                7. Su tierra y clima son ideales para agro alimentos, ganadería y reforestación <br>
+                                8. Forma parte del MERCOSUR<br>
+                                9. Población mayormente joven <br>
+                                10. Abundancia de agua, energía y tierra fértil <br>
+                                11. Constantemente abriendo nuevos mercados para la exportación de carnes</p>
+                        </div>
+                    </div>
+                    <hr class="bottom-line white-bg">
+                </div>
+            </section>
+            <!---->
+            <!--SECCIÓN CONTACTO-->
+            <section id="contact" class="section-padding wow fadeInUp delay-05s">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center white">
+                            <h2 class="service-title pad-bt15">Contactanos...</h2>
+                        </div>
+                        <div class="col-md-12 text-left white">
+                        </div>
+
+                        <!--FURMULARIO-->
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                            {% block forms %}
+                            {% endblock forms %}
+                        </div>
+                        <!--INFO ADICIONAL-->
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <div class="loction-info white ">
+                                <p><i class="fa fa-map-marker fa-fw pull-left fa-2x"></i><a
+                                        href="https://www.google.com.py/maps/place/Combiwey/@-25.2756255,-57.5969466,17z/data=!4m12!1m6!3m5!1s0x945da63314f9e827:0xbfcf6e06ce241ae2!2sCombiwey!8m2!3d-25.2756255!4d-57.5969466!3m4!1s0x945da63314f9e827:0xbfcf6e06ce241ae2!8m2!3d-25.2756255!4d-57.5969466?hl=es"
+                                        target="_blank">Dirección: Tte. Insaurralde 471 c/ Zurbaran<br>Asunción,
+                                    Paraguay</a></p>
+                                <p><i class="fa fa-clock-o fa-fw pull-left fa-2x"></i>Horario: Martes a Domingo - 18:00hs a
+                                    01:00hs</p>
+                                <p><i class="fa fa-phone fa-fw pull-left fa-2x"></i>Delivery: +595 986 334 441 - A partir de
+                                    las 18:00hs</p>
+                                <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>Mail: combiwey@gmail.com </p>
+                                <p><a href="https://www.facebook.com/combiwey" target="_blank"><i
+                                        class="fa fa-facebook fa-fw pull-left fa-2x"></i></a></p>
+                                <p><a href="https://www.instagram.com/combiwey" target="_blank"><i
+                                        class="fa fa-instagram fa-fw pull-left fa-2x"></i></a></p>
+                                <p><a href="https://www.twitter.com/combiwey" target="_blank"><i
+                                        class="fa fa-twitter fa-fw pull-left fa-2x"></i></a></p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr class="bottom-line white-bg">
+                </div>
+            </section>
+            <!---->
+            <!---->
+            <footer id="footer">
+                <div class="container">
+                    <div class="row text-center">
+                        <a>&copy; Paraguay Connections Todos los derechos reservados.</a>
+                        <div class="credits">
+                            <!--
+                                All the links in the footer should remain intact.
+                                You can delete the links only if you purchased the pro version.
+                                Licensing information: https://bootstrapmade.com/license/
+                                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Baker
+                            -->
+                            <a>Diseñado por</a> <a href="mailto:enzoama95@gmail.com">Enzo Amarilla</a>
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </body>
 </html>
