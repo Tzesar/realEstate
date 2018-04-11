@@ -89,7 +89,7 @@ class Usuario(models.Model):
 
 
 class Request(models.Model):
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, blank=True)
 
     interes = models.CharField(max_length=20, choices=ACTION_CHOICES, blank=True, verbose_name=_('interés'))
 

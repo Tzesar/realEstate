@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
@@ -28,20 +29,21 @@ def save_consultas(request):
         usuario_form = UsuarioForm(request.POST)
 
         if consulta_form.is_valid() & usuario_form.is_valid():
-            consulta = consulta_form.save(commit=False)
-
             usuario = get_cleaned_user(usuario_form)
 
+            consulta = consulta_form.save(commit=False)
             consulta.usuario = usuario
 
             consulta.save()
-            return HttpResponseRedirect('/request-form/')
+
+            messages.success(request, 'Consulta enviada')
+            return HttpResponseRedirect('')
 
     else:
         consulta_form = ConsultaForm()
         usuario_form = UsuarioForm()
 
-    return render(request, 'requestForm.html', {
+        return render(request, 'requestForm.html', {
         'consulta_form': consulta_form,
         'usuario_form': usuario_form
     })
