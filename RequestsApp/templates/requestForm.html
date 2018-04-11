@@ -15,15 +15,14 @@
             {# Formulario usuario #}
 
             <div class="form-row">
-                {% bootstrap_field usuario_form.nombre_completo placeholder='Su nombre' show_label=False form_group_class='form-group col-md-5' size='sm' %}
-                {% bootstrap_field usuario_form.email placeholder='Su correo electrónico' show_label=False form_group_class='form-group col-md-4' size='sm' %}
-                {% bootstrap_field usuario_form.nro_telefono placeholder='Su nro. de teléfono' show_label=False form_group_class='form-group col-md-3' size='sm' %}
+                {% bootstrap_field usuario_form.nombre_completo placeholder='Su nombre' show_label=False form_group_class='form-group col-md-7' size='sm' %}
+                {% bootstrap_field usuario_form.email placeholder='Su correo electrónico' show_label=False form_group_class='form-group col-md-5' size='sm' %}
             </div>
 
             <div class="form-row">
+                {% bootstrap_field usuario_form.nro_telefono placeholder='Su nro. de teléfono' show_label=False form_group_class='form-group col-md-3' size='sm' %}
                 {% bootstrap_field usuario_form.ocupacion placeholder='Su ocupación' show_label=False form_group_class='form-group col-md-5' size='sm' %}
                 {% bootstrap_field usuario_form.nacionalidad placeholder='Su nacionalidad' show_label=False form_group_class='form-group col-md-4' size='sm' %}
-                {% bootstrap_field usuario_form.idioma show_label=False form_group_class='form-group col-md-3' size='sm' %}
             </div>
 
             <span></span>
@@ -31,8 +30,8 @@
             {# Formulario consulta inmobiliaria #}
 
             <div class="form-row">
+                {% bootstrap_field usuario_form.idioma form_group_class='form-group col-md-4' size='sm' %}
                 {% bootstrap_field consulta_form.interes placeholder=' ' form_group_class='form-group col-md-4' size='sm' %}
-                {% bootstrap_field consulta_form.rubro placeholder=' ' form_group_class='form-group col-md-4' size='sm' %}
                 {% bootstrap_field consulta_form.zona_preferencia placeholder=' ' form_group_class='form-group col-md-4' size='sm' %}
             </div>
 
@@ -42,7 +41,12 @@
                 {% bootstrap_field consulta_form.formacion form_group_class='form-group col-md-4' size='sm' %}
             </div>
 
-            {% bootstrap_button content='Enviar Consulta' button_type='submit' button_class='btn btn-primary' %}
+            <div class="form-row">
+                {% bootstrap_field consulta_form.rubro placeholder=' ' form_group_class='form-group col-md-4' size='sm' %}
+                {% bootstrap_field consulta_form.otro_rubro placeholder='Aquí puede especificar datos sobre su rubro' form_group_class='form-group col-md-8 hidden-field' size='sm' %}
+            </div>
+
+            {% bootstrap_button content='Enviar Consulta' button_type='submit' button_class='btn' extra_classes="btn-submit" %}
         </form>
     </div>
 {% endblock forms %}

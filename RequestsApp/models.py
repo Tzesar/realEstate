@@ -94,7 +94,7 @@ class Request(models.Model):
     interes = models.CharField(max_length=20, choices=ACTION_CHOICES, blank=True, verbose_name=_('interés'))
 
     rubro = models.CharField(max_length=30, choices=ACTIVITY_TYPE_CHOICES, blank=True)
-    otro_rubro = models.CharField(max_length=50, blank=True)
+    otro_rubro = models.TextField(max_length=200, blank=True, verbose_name=_('Otros'))
 
     zona_preferencia = models.CharField(max_length=20, choices=PREFERENCE_ZONE_CHOICES, blank=True,
                                         verbose_name=_('zona de preferencia'))

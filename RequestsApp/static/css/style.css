@@ -692,13 +692,25 @@ body{
 	}
 }
 
-p.footer-class{
+p.footer-class {
     color: #fff;
     font-weight: 400;
     margin-bottom: 0;
 }
 
-footer{
+footer {
     padding: 20px 0;
 	background-color: #585858;
+}
+
+div.hidden-field {
+    display: none;
+}
+
+div.visible-field {
+    display: inline;
+}
+
+button .btn.btn-submit {
+    color: #c44618;
 }
