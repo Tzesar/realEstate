@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['tzesar.pythonanywhere.com', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'django_crontab',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -132,3 +133,10 @@ EMAIL_USE_TLS = True
 
 FROM_EMAIL = 'agu.amarilla@gmail.com'
 TO_EMAIL = 'agu.amarilla@gmail.com'
+
+
+# Cron jobs configuration
+CRONJOBS = [
+    ('* * * * *', 'RequestsApp.cron.send_report_job.send_email')
+    # ,('0 0 * * 0', 'RequestsApp.cron.send_report_job.send_email')
+]

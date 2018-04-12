@@ -19,6 +19,5 @@ from . import views
 
 urlpatterns = [
     path('request-form/', views.save_consultas, name='Test Form'),
-    path('', views.save_consultas, name='Test Form'),
-    path('send-email/', views.send_email, name='Send Email')
+    path('', views.save_consultas, name='Test Form')
 ]

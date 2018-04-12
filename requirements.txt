@@ -1,5 +1,6 @@
 Django==2.0.3
 django-bootstrap4==0.0.6
+django-crontab==0.7.1
 django-excel-response==2.0.3
 et-xmlfile==1.0.1
 jdcal==1.3
