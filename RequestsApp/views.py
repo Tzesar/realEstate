@@ -54,6 +54,26 @@ def save_consultas(request):
         })
 
 
+def process_queryset(consultas):
+    data = [
+        [
+            'nombre_completo', 'email', 'nro_telefono', 'ocupacion', 'nacionalidad', 'idioma',
+            'interes', 'rubro', 'otro_rubro', 'zona_preferencia', 'tamaño', 'presupuesto', 'formacion'
+        ]
+    ]
+
+    for c in consultas:
+        u = c.usuario
+        row = [
+            u.nombre_completo, u.email, u.nro_telefono, u.ocupacion, u.nacionalidad, u.idioma,
+            c.interes, c.rubro, c.otro_rubro, c.zona_preferencia, c.tamanho, c.presupuesto, c.formacion
+        ]
+
+        data.append(row)
+
+    return data
+
+
 def send_email(request):
     date_now = datetime.date.today()
     timedelta = datetime.timedelta(weeks=1)
@@ -73,7 +93,7 @@ def send_email(request):
         connection=get_connection(),
     )
 
-    excel_file = ExcelResponse(consultas)
+    excel_file = ExcelResponse(process_queryset(consultas))
     if consultas.count() > 0:
         message.attach(
             'reporte-%s-%s.xls' % (date_now_str, date_a_week_ago_str),
