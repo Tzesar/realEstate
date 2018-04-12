@@ -109,3 +109,8 @@ class Consulta(models.Model):
     def __str__(self):
         return self.usuario.__str__() + " interes:" + self.interes
 
+
+class Reporte(models.Model):
+    fecha_ejecucion = models.DateField(auto_now_add=True)
+    cantidad_consultas = models.IntegerField()
+
