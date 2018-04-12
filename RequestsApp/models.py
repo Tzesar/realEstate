@@ -88,7 +88,7 @@ class Usuario(models.Model):
         return self.nombre_completo
 
 
-class Request(models.Model):
+class Consulta(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, blank=True)
 
     interes = models.CharField(max_length=20, choices=ACTION_CHOICES, blank=True, verbose_name=_('interés'))

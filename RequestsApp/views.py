@@ -1,8 +1,11 @@
 from django.contrib import messages
-from django.shortcuts import render
+from django.core.mail import get_connection, EmailMessage
 from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from excel_response import ExcelResponse
 
-from RequestsApp.models import Usuario
+from RealEstate import settings
+from RequestsApp.models import Usuario, Consulta
 from .forms import ConsultaForm, UsuarioForm
 
 
@@ -47,3 +50,23 @@ def save_consultas(request):
         'consulta_form': consulta_form,
         'usuario_form': usuario_form
     })
+
+
+def send_email(request):
+
+    message = EmailMessage(
+        'Django Test',
+        'This is an email from Django.',
+        settings.FROM_EMAIL,
+        [settings.TO_EMAIL],
+        connection=get_connection(),
+    )
+
+    consultas = Consulta.objects.all()
+    excel_file = ExcelResponse(consultas)
+    if consultas.count() > 0:
+        message.attach('report.xls', excel_file.content, 'application/vnd.ms-excel')
+
+    message.send()
+
+    return HttpResponseRedirect('/request-form/')

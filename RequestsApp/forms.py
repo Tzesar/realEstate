@@ -1,11 +1,11 @@
 from django.forms import ModelForm
 
-from RequestsApp.models import Request, Usuario
+from RequestsApp.models import Consulta, Usuario
 
 
 class ConsultaForm(ModelForm):
     class Meta:
-        model = Request
+        model = Consulta
         fields = '__all__'
         localized_fields = '__all__'
 

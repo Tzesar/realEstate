@@ -122,3 +122,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+# Email configuration
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'agu.amarilla@gmail.com'
+EMAIL_HOST_PASSWORD = 'mupjkikrugxdqjbe'
+EMAIL_USE_TLS = True
+
+FROM_EMAIL = 'agu.amarilla@gmail.com'
+TO_EMAIL = 'agu.amarilla@gmail.com'
