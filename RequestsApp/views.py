@@ -1,3 +1,5 @@
+import datetime
+
 from django.contrib import messages
 from django.core.mail import get_connection, EmailMessage
 from django.http import HttpResponseRedirect
@@ -47,25 +49,39 @@ def save_consultas(request):
         usuario_form = UsuarioForm()
 
         return render(request, 'requestForm.html', {
-        'consulta_form': consulta_form,
-        'usuario_form': usuario_form
-    })
+            'consulta_form': consulta_form,
+            'usuario_form': usuario_form
+        })
 
 
 def send_email(request):
+    date_now = datetime.date.today()
+    timedelta = datetime.timedelta(weeks=1)
+    date_a_week_ago = date_now - timedelta
 
+    consultas = Consulta.objects.filter(fecha__range=(date_a_week_ago, date_now))
+
+    date_now_str = date_now.strftime("%d/%m/%Y")
+    date_a_week_ago_str = date_a_week_ago.strftime("%d/%m/%Y")
     message = EmailMessage(
-        'Django Test',
-        'This is an email from Django.',
+        'Resumen de consultas (%s - %s)' % (date_now_str, date_a_week_ago_str),
+        'Las consultas realizadas desde %s hasta %s se adjuntan en el siguiente archivo' % (
+            date_now_str, date_a_week_ago_str
+        ),
         settings.FROM_EMAIL,
         [settings.TO_EMAIL],
         connection=get_connection(),
     )
 
-    consultas = Consulta.objects.all()
     excel_file = ExcelResponse(consultas)
     if consultas.count() > 0:
-        message.attach('report.xls', excel_file.content, 'application/vnd.ms-excel')
+        message.attach(
+            'reporte-%s-%s.xls' % (date_now_str, date_a_week_ago_str),
+            excel_file.content,
+            'application/vnd.ms-excel'
+        )
+    else:
+        message.body = 'No existen nuevas consultas desde %s hasta %s' % (date_now_str, date_a_week_ago_str)
 
     message.send()
 

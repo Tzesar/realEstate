@@ -104,6 +104,8 @@ class Consulta(models.Model):
 
     formacion = models.CharField(max_length=30, choices=FORMATION_CHOICES, blank=True, verbose_name=_('formación'))
 
+    fecha = models.DateField(auto_now_add=True)
+
     def __str__(self):
         return self.usuario.__str__() + " interes:" + self.interes
 

@@ -6,7 +6,7 @@ from RequestsApp.models import Consulta, Usuario
 class ConsultaForm(ModelForm):
     class Meta:
         model = Consulta
-        fields = '__all__'
+        exclude = ['fecha']
         localized_fields = '__all__'
 
 
