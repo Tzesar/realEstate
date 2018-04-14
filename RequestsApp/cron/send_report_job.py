@@ -28,22 +28,21 @@ def process_queryset(consultas):
 
 
 def send_email():
-    date_now = datetime.date.today()
-    timedelta = datetime.timedelta(weeks=1)
-    date_a_week_ago = date_now - timedelta
+    today = datetime.date.today()
+    timedelta = datetime.timedelta(days=1)
+    yesterday = today - timedelta
 
     last_report = Reporte.objects.last()
 
-    if last_report is None or last_report.fecha_ejecucion < date_a_week_ago:
-        consultas = Consulta.objects.filter(fecha__range=(date_a_week_ago, date_now))
+    if last_report is None or last_report.fecha_ejecucion < yesterday:
+        consultas = Consulta.objects.all()
 
-        date_now_str = date_now.strftime("%d/%m/%Y")
-        date_a_week_ago_str = date_a_week_ago.strftime("%d/%m/%Y")
+        today_str = today.strftime("%d/%m/%Y")
+        yesterday_str = yesterday.strftime("%d/%m/%Y")
         message = EmailMessage(
-            'Resumen de consultas (%s - %s)' % (date_now_str, date_a_week_ago_str),
-            'Las consultas realizadas desde %s hasta %s se adjuntan en el siguiente archivo' % (
-                date_now_str, date_a_week_ago_str
-            ),
+            'Resumen de consultas (%s)' % today_str,
+            'Las consultas realizadas desde %s hasta %s se adjuntan en el siguiente archivo' %
+            (today_str, yesterday_str),
             settings.FROM_EMAIL,
             [settings.TO_EMAIL],
             connection=get_connection(),
@@ -52,12 +51,12 @@ def send_email():
         excel_file = ExcelResponse(process_queryset(consultas))
         if consultas.count() > 0:
             message.attach(
-                'reporte-%s-%s.xls' % (date_now_str, date_a_week_ago_str),
+                'reporte-%s.xls' % today_str,
                 excel_file.content,
                 'application/vnd.ms-excel'
             )
         else:
-            message.body = 'No existen nuevas consultas desde %s hasta %s' % (date_now_str, date_a_week_ago_str)
+            message.body = 'No existen nuevas consultas desde %s hasta %s' % (today_str, yesterday_str)
 
         message.send()
 
