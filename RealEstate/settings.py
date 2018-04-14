@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-py'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Asuncion'
 
 USE_I18N = True
 
@@ -138,5 +138,4 @@ TO_EMAIL = 'agu.amarilla@gmail.com'
 # Cron jobs configuration
 CRONJOBS = [
     ('* * * * *', 'RequestsApp.cron.send_report_job.send_email')
-    # ,('0 0 * * 0', 'RequestsApp.cron.send_report_job.send_email')
 ]
