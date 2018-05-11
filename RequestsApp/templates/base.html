@@ -8,8 +8,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Paraguay Connections</title>
+		<link rel="shortcut icon" src="{% static 'img/icono.png' %}"> <!--AGREGUÉ ICONITO-->
+		
+        <title>Paraguay Connections &reg</title>
 
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
@@ -25,9 +26,9 @@
             <div class="header">
                 <div class="bg-color">
                     <header id="main-header">
-                        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top ">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
                             <a class="navbar-brand" href="#">
-                                <img src="{% static 'img/logopyconnections.png' %}">
+                                <img src="{% static 'img/logonavbar.png' %}">
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                     data-target="#navbarCollapsableContent"
@@ -57,7 +58,6 @@
                                     <h2 class="bnr-sub-title"></h2>
                                     <p class="bnr-para"></p>
                                     <div class="overlay-detail">
-										<a href="#service"><i class="fa fa-angle-down"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -86,9 +86,12 @@
                                 10. Abundancia de agua, energía y tierra fértil <br>
                                 11. Constantemente abriendo nuevos mercados para la exportación de carnes</p>
 								<br><br>
-								<h3 class="service-title pad-bt15">Nuestras propiedades</h3>
-								<img src="{% static 'img/mapa.png' %}">
-								<br><br>
+								<hr class="bottom-line white-bg">
+								<div class="test">
+									<h3 class="service-title pad-bt15">Nuestras propiedades</h3>
+									<img id= "mapa" src="{% static 'img/mapa.png' %}">
+									<br><br>
+								</div>
                         </div>
                     </div>
                     <hr class="bottom-line white-bg">
@@ -141,15 +144,12 @@
     </body>
 
     <script type="application/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-
     <script type="application/javascript" src="{% static 'js/popper.min.js' %}"></script>
     <script type="application/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-
     <script type="application/javascript" src="{% static 'js/jquery.easing.min.js' %}"></script>
     <script type="application/javascript" src="{% static 'js/wow.js' %}"></script>
     <script type="application/javascript" src="{% static 'js/jquery.bxslider.min.js' %}"></script>
     <script type="application/javascript" src="{% static 'js/custom.js' %}"></script>
-
     <script type="application/javascript" src="{% static 'js/showOthersField.js' %}"></script>
 
 </html>

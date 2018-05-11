@@ -1,5 +1,5 @@
 ﻿/*
-COMBIWEY SA WEBSITE STYLE
+PARAGUAY CONNECTIONS WEBSITE STYLE
 */
 
 body {
@@ -88,11 +88,11 @@ HEADER
 ***********************************/
 .header{
     
-	background: url('../img/LOGO-CENTRAL.png') repeat top center fixed;
+	background: url('../img/logocentral.jpg') repeat top center fixed;
 	background-color: white;
     background-size: cover;
-	max-height: 1000px;
     background-position: relative;
+	background-attachment: fixed;
 }
 }
 
@@ -110,14 +110,15 @@ HEADER
 {
 }
 .navbar-default {
-    background-color: rgba(0, 0, 0, 0.3);
-    border:0px;
+    background-color: rgba(254, 0, 0, 0.3);
+    border:10px;
     transition: all 0.3s;
 }
 
 .top-nav-collapse {
     padding: 0; 
-    background: rgba(190,189,189, 0.3); /*color de la barra de arriba*/
+    /*background: rgba(190,189,189, 0.3); /*color de la barra de arriba*/
+	background: rgba(255,255,255, 0.3); /*color de la barra de arriba*/
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus /*no se usa*/
@@ -129,11 +130,11 @@ HEADER
 {
     padding: 5px 10px;
     font-size: 15px;
-    line-height: 40px; /*tamaño de la franja*/
+    line-height: 20px; /*tamaño de la franja*/
     font-weight: 400; /*negrita, anchor de las letras*/
     text-transform: uppercase;
     background: transparent;
-    color: #fff; /*color de las letras*/
+    color: #AAA; /*color de las letras*/
     -webkit-transition: color 0.2s ease-out; /*rapidez de cambio de colores*/
     transition: color 0.2s ease-out; /*rapidez de cambio de colores*/
 }
@@ -280,6 +281,11 @@ ul.nosotros-list li i
     padding-right: 10px;
 }
 
+#mapa {
+	max-width: 500px;
+	
+	}
+
 }
 .bx-wrapper img {
     width: 70px;
@@ -325,171 +331,17 @@ ul.nosotros-list li i
 }
 /***********************************
 ************************************
-eventos
-************************************
-***********************************/
-.eventos-item
-{
-    position:relative;
-    overflow:hidden;
-}
-.eventos-item figure
-{
-    margin:0;
-    padding:0;
-    position:relative;
-    cursor:pointer;
-}
-.eventos-item figure img {
-    display:block;
-    position:relative;
-    z-index:10;
-    margin:-15px 0
-}
-.eventos-item figure figcaption {
-    display:block;
-    position:absolute;
-    z-index:5;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box
-}
-.eventos-item figure h2 {
-    font-family: 'Fira Sans', sans-serif;
-    color:#fff;
-    font-size:20px;
-    text-align:left;
-    padding-bottom:15px;
-}
-.eventos-item figure p {
-    display:block;
-    line-height:18px;
-    margin:0;
-    color:#fff;
-    text-align:left
-}
-.eventos-item figure figcaption {
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    padding: 59px 30px;
-    background-color: #c44618;
-    backface-visibility:hidden;
-    -webkit-transform:rotateY(-180deg);
-    -moz-transform:rotateY(-180deg);
-    transform:rotateY(-180deg);
-    -webkit-transition:all .5s;
-    -moz-transition:all .5s;
-    transition:all .5s;
-    text-align: center;
-}
-.eventos-item figure img {
-    backface-visibility:hidden;
-    -webkit-transition:all .5s;
-    -moz-transition:all .5s;
-    transition:all .5s
-}
-.eventos-item figure:hover img,figure.hover img {
-    -webkit-transform:rotateY(180deg);
-    -moz-transform:rotateY(180deg);
-    transform:rotateY(180deg)
-}
-.eventos-item figure:hover figcaption,figure.hover figcaption {
-    -webkit-transform:rotateY(0);
-    -moz-transform:rotateY(0);
-    transform:rotateY(0)
-}
-/***********************************
-************************************
-menú
-************************************
-***********************************/
-.menú-item
-{
-    position:relative;
-    overflow:hidden;
-}
-.menú-item figure
-{
-    margin:0;
-    padding:0;
-    position:relative;
-    cursor:pointer;
-}
-.menú-item figure img {
-    display:block;
-    position:relative;
-    z-index:10;
-    margin:-15px 0
-}
-.menú-item figure figcaption {
-    display:block;
-    position:absolute;
-    z-index:5;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box
-}
-.menú-item figure h2 {
-    font-family: 'Fira Sans', sans-serif;
-    color:#fff;
-    font-size:20px;
-    text-align:left;
-    padding-bottom:15px;
-}
-.menú-item figure p {
-    display:block;
-    line-height:18px;
-    margin:0;
-    color:#fff;
-    text-align:left
-}
-.menú-item figure figcaption {
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    padding: 59px 30px;
-    background-color: #c44618;
-    backface-visibility:hidden;
-    -webkit-transform:rotateY(-180deg);
-    -moz-transform:rotateY(-180deg);
-    transform:rotateY(-180deg);
-    -webkit-transition:all .5s;
-    -moz-transition:all .5s;
-    transition:all .5s;
-    text-align: center;
-}
-.menú-item figure img {
-    backface-visibility:hidden;
-    -webkit-transition:all .5s;
-    -moz-transition:all .5s;
-    transition:all .5s
-}
-.menú-item figure:hover img,figure.hover img {
-    -webkit-transform:rotateY(180deg);
-    -moz-transform:rotateY(180deg);
-    transform:rotateY(180deg)
-}
-.menú-item figure:hover figcaption,figure.hover figcaption {
-    -webkit-transform:rotateY(0);
-    -moz-transform:rotateY(0);
-    transform:rotateY(0)
-}
-/***********************************
-************************************
 contacto
 ************************************
 ***********************************/
-#contacto
+#contact
 {
     background-color: #F3F4F8; /*fondo seccion contactoo*/
 }
 .btn-submit, .btn-submit:hover, .btn-submit:focus /*boton enviar formulario*/
 {
     background-color: #c44618;
-    border-radius: 60px;
+    border-radius: 20px;
     color: #fff;
     font-weight: 400;
     border: 1px solid #c44618;
@@ -499,8 +351,8 @@ contacto
 .form-control /*texto formulario*/
 {
     background-color: transparent;
-    border-radius: 0px;
-    color: #c44618 !important;
+    border-radius: 5px;
+    color: #686A6D !important;
     border-color: #c44618;
 }
 .form-control:focus { /*texto formulario*/
@@ -520,31 +372,6 @@ contacto
     font-weight:400;
     font-size:13px;
 }
-
-#sendmessage {
-    color: green;
-    border:1px solid green;
-    display:none;
-    text-align:center;
-    padding:15px;
-    font-weight:600;
-    margin-bottom:15px;
-}
-
-#errormessage {
-    color: red;
-    display:none;
-    border:1px solid red;
-    text-align:center;
-    padding:15px;
-    font-weight:600;
-    margin-bottom:15px;
-}
-
-#sendmessage.show, #errormessage.show, .show {
-    display:block;
-}
-
 .loction-info p
 {
     margin-bottom: 25px;
@@ -609,15 +436,18 @@ cta
 Responsive media queries
 ************************************
 ***********************************/
-/*Tamaño 1 de pantalla 768 hasta 980 pixeles*/
+/*Tamaño 1 de pantalla: 768px hasta 980px de ancho*/
 @media (min-width: 768px) and (max-width: 980px) 
 {
 	.header { /*imagen de fondo*/
-	background-size: contain;
+	background: url('../img/logocentral.jpg') repeat top center fixed;
+	background-size: fixed;
+	background-color: white;
 	background-repeat: no-repeat;
+	background-position: relative;
 	}
     .nosotros-item, .blog-sec, .wrap-item, .loction-info{
-    margin-bottom: 15px;
+    margin-bottom: 145px;
 	}
 .eventos-item figure figcaption{
     padding: 55px 30px;
@@ -625,36 +455,59 @@ Responsive media queries
 .padding-right-zero{
     padding-right: 15px !important;
 	}
+	
+#mapa {
+	max-width: 500px;
+	
+	}
 }
 /*---*/
-/*Tamaño 2 de pantalla: 451 hasta 767 pixeles, iphone de costado*/
+/*Tamaño 2 de pantalla: 451px hasta 767px de ancho, iphone horizontal*/
 @media (min-width: 451px) and (max-width: 767px) 
 {
 .nosotros-item, .blog-sec, .wrap-item, .loction-info{
     margin-bottom: 15px;
 	}
 .header { /*imagen de fondo*/
-	background-size: contain;
+	background: url('../img/logocentralmenor.jpg') repeat top center fixed;
+	background-size: 100vw;
+	background-color: white;
 	background-repeat: no-repeat;
+	background-position: relative;
 	max-height: 370px;
 	}
 .bg-color { /*largor del primer contenedor*/
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0);
     min-height: 350px;
-	}	
+	}
+
+#mapa {
+	max-width: 300px;
+	
+	}
+	
 }
 /*---*/
-/*Tamaño 3 de pantalla: 20 hasta 450 pixeles de ancho, iphone derecho*/
+/*Tamaño 3 de pantalla: 20px hasta 450px de ancho, iphone vertical*/
 @media (min-width: 20px) and (max-width: 450px)
 {
 .header { /*imagen de fondo*/
-	background-size: contain;
+	background: url('../img/logocentralmenor.jpg') repeat top center fixed;
+	background-size: 100vw;
+	background-position: relative;
 	background-repeat: no-repeat;
 	background-color: #fff;
 	width: 100%;
 	height: 300px;
 	min-height: 200px;
 	}
+
+#mapa {
+	max-width: 300px;
+	
+	}
+	
+
 .bg-color { /*largor de la sombra*/
     background-color: rgba(0, 0, 0, 0.0);
     min-height: 100px;
