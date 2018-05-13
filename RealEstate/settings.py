@@ -128,11 +128,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'enzoama95@gmail.com'
-EMAIL_HOST_PASSWORD = 'inlkmxrytaczxyoz'
+EMAIL_HOST_PASSWORD = 'gogbckhhlpolbmvv'
 EMAIL_USE_TLS = True
 
 FROM_EMAIL = 'enzoama95@gmail.com'
-TO_EMAIL = 'agu.amarilla@gmail.com'
+TO_EMAIL = 'enzoama95@gmail.com'
 
 
 # Cron jobs configuration
