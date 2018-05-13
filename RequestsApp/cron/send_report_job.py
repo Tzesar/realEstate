@@ -38,11 +38,9 @@ def send_email():
         consultas = Consulta.objects.all()
 
         today_str = today.strftime("%d/%m/%Y")
-        yesterday_str = yesterday.strftime("%d/%m/%Y")
         message = EmailMessage(
             'Resumen de consultas (%s)' % today_str,
-            'Las consultas realizadas desde %s hasta %s se adjuntan en el siguiente archivo' %
-            (today_str, yesterday_str),
+            'Las consultas realizadas hasta %s se adjuntan en el siguiente archivo' % today_str,
             settings.FROM_EMAIL,
             [settings.TO_EMAIL],
             connection=get_connection(),
@@ -56,9 +54,8 @@ def send_email():
                 'application/vnd.ms-excel'
             )
         else:
-            message.body = 'No existen nuevas consultas desde %s hasta %s' % (today_str, yesterday_str)
+            message.body = 'No existen nuevas consultas hasta %s' % today_str
 
         message.send()
 
         Reporte(cantidad_consultas=consultas.count()).save()
-
