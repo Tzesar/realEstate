@@ -88,7 +88,7 @@ HEADER
 ***********************************/
 .header{
     
-	background: url('../img/logocentral.jpg') repeat top center fixed;
+	background: url('../img/prueba1.png') repeat top center fixed;
 	background-color: white;
     background-size: cover;
     background-position: relative;
@@ -268,12 +268,12 @@ features
 }
 /***********************************
 ************************************
-nosotros (antiguo nosotros)
+nosotros (antiguo service)
 ************************************
 ***********************************/
 #nosotros
 {
-    background-color: #F3F4F8; /*fondo seccion nosotros*/
+    background-color: #F2F2F2; /*fondo seccion nosotros*/
 }
 ul.nosotros-list li i
 {
@@ -329,14 +329,83 @@ ul.nosotros-list li i
 .bx-wrapper {
     margin: 0 auto 35px;
 }
+
+
+/***********************************
+************************************
+porqueparaguay (antiguo service)
+************************************
+***********************************/
+#porqueparaguay
+{
+    background-color: #FAFAFA; /*fondo seccion nosotros #F3F4F8*/
+}
+ul.nosotros-list li i
+{
+    color: #fff;
+    padding-right: 10px;
+}
+
+#mapa {
+	max-width: 500px;
+	
+	}
+
+}
+.bx-wrapper img {
+    width: 70px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin-bottom: 25px;
+}
+.nosotros-item h3 span
+{
+    opacity: 0.7;
+    font-size: 55px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -5px;
+    font-weight: 900;
+    padding-right: 6px;
+}
+.nosotros-item h3
+{
+    font-weight: 700;
+}
+.nosotros-item p
+{
+    opacity: 0.6;
+    color: inherit;
+    padding: 10px 0px;
+}
+.nosotros-item a
+{
+    color: #c44618;
+}
+.mr-btn-15 /*margen entre fotos, arriba abajo*/
+{
+    margin-bottom: 15px;
+}
+.padding-right-zero /*margen entre fotos, izquierda derecha*/
+{
+    padding-right: 0px !important;
+}
+.bx-wrapper {
+    margin: 0 auto 35px;
+}
+
+
+
 /***********************************
 ************************************
 contacto
 ************************************
 ***********************************/
+
 #contact
 {
-    background-color: #F3F4F8; /*fondo seccion contactoo*/
+    background-color: #F2F2F2; /*fondo seccion contacto*/
 }
 .btn-submit, .btn-submit:hover, .btn-submit:focus /*boton enviar formulario*/
 {
@@ -440,8 +509,8 @@ Responsive media queries
 @media (min-width: 768px) and (max-width: 980px) 
 {
 	.header { /*imagen de fondo*/
-	background: url('../img/logocentral.jpg') repeat top center fixed;
-	background-size: fixed;
+	background: url('../img/prueba1.png') repeat top center fixed;
+	background-size: 100vw;
 	background-color: white;
 	background-repeat: no-repeat;
 	background-position: relative;
@@ -460,6 +529,7 @@ Responsive media queries
 	max-width: 500px;
 	
 	}
+
 }
 /*---*/
 /*Tamaño 2 de pantalla: 451px hasta 767px de ancho, iphone horizontal*/
@@ -469,7 +539,7 @@ Responsive media queries
     margin-bottom: 15px;
 	}
 .header { /*imagen de fondo*/
-	background: url('../img/logocentralmenor.jpg') repeat top center fixed;
+	background: url('../img/prueba1responsive.png') repeat top center fixed;
 	background-size: 100vw;
 	background-color: white;
 	background-repeat: no-repeat;
@@ -492,7 +562,7 @@ Responsive media queries
 @media (min-width: 20px) and (max-width: 450px)
 {
 .header { /*imagen de fondo*/
-	background: url('../img/logocentralmenor.jpg') repeat top center fixed;
+	background: url('../img/prueba1responsive.png') repeat top center fixed;
 	background-size: 100vw;
 	background-position: relative;
 	background-repeat: no-repeat;
