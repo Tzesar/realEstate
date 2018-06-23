@@ -37,7 +37,7 @@ def save_consultas(request):
             consulta.save()
 
             messages.success(request, 'Consulta enviada')
-            return HttpResponseRedirect('')
+            return HttpResponseRedirect('/')
 
     else:
         consulta_form = ConsultaForm()
