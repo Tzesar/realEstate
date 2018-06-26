@@ -131,8 +131,8 @@ EMAIL_HOST_USER = 'enzoama95@gmail.com'
 EMAIL_HOST_PASSWORD = 'gogbckhhlpolbmvv'
 EMAIL_USE_TLS = True
 
-FROM_EMAIL = 'enzoama95@gmail.com'
-TO_EMAIL = 'enzoama95@gmail.com'
+FROM_EMAIL = 'Reporte ParaguayConnections' #Nombre del emisor
+TO_EMAIL = 'enzoama95@gmail.com','paraguayconnections@gmail.com' 
 
 
 # Cron jobs configuration
