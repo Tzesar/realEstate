@@ -29,34 +29,30 @@ def process_queryset(consultas):
 
 def send_email():
     today = datetime.date.today()
-    timedelta = datetime.timedelta(days=1)
-    yesterday = today - timedelta
+    if today.weekday() == 0:
+        # This check was done to make the request report a daily report
+        # if last_report is None or last_report.fecha_ejecucion < yesterday:
+        consultas = Consulta.objects.all()
 
-    last_report = Reporte.objects.last()
-
-    # This check was done to make the request report a daily report
-    # if last_report is None or last_report.fecha_ejecucion < yesterday:
-    consultas = Consulta.objects.all()
-
-    today_str = today.strftime("%d/%m/%Y")
-    message = EmailMessage(
-        'Resumen de consultas (%s)' % today_str,
-        'Las consultas realizadas hasta %s se adjuntan en el siguiente archivo' % today_str,
-        settings.FROM_EMAIL,
-        [settings.TO_EMAIL],
-        connection=get_connection(),
-    )
-
-    excel_file = ExcelResponse(process_queryset(consultas))
-    if consultas.count() > 0:
-        message.attach(
-            'reporte-%s.xls' % today_str,
-            excel_file.content,
-            'application/vnd.ms-excel'
+        today_str = today.strftime("%d/%m/%Y")
+        message = EmailMessage(
+            'Resumen de consultas (%s)' % today_str,
+            'Las consultas realizadas hasta %s se adjuntan en el siguiente archivo' % today_str,
+            settings.FROM_EMAIL,
+            [settings.TO_EMAIL],
+            connection=get_connection(),
         )
-    else:
-        message.body = 'No existen nuevas consultas hasta %s' % today_str
 
-    message.send()
+        excel_file = ExcelResponse(process_queryset(consultas))
+        if consultas.count() > 0:
+            message.attach(
+                'reporte-%s.xls' % today_str,
+                excel_file.content,
+                'application/vnd.ms-excel'
+            )
+        else:
+            message.body = 'No existen nuevas consultas hasta %s' % today_str
 
-    Reporte(cantidad_consultas=consultas.count()).save()
+        message.send()
+
+        Reporte(cantidad_consultas=consultas.count()).save()
