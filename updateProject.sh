@@ -41,7 +41,7 @@ for arg in "$@"; do
 	fi
 done
 
-REPO_URL=$(git remote get-url --all origin)
+REPO_URL=$(git remote --verbose)
 echo "Retrieving latest changes from repo:" $REPO_URL
 
 git fetch --all >> $DEBUGLOG 2>> $LOGFILE
