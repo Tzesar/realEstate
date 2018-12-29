@@ -25,7 +25,7 @@ SECRET_KEY = '4tjpq=ka)74p84#n498mb2#u=20k8d))k0066uvn-tsyqcqu6$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['enzoama95.pythonanywhere.com', 'tzesar.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = ['enzoama95.pythonanywhere.com', 'tzesar.pythonanywhere.com', '127.0.0.1', 'www.paraguayconnections.com']
 
 
 # Application definition
@@ -131,8 +131,8 @@ EMAIL_HOST_USER = 'enzoama95@gmail.com'
 EMAIL_HOST_PASSWORD = 'gogbckhhlpolbmvv'
 EMAIL_USE_TLS = True
 
-FROM_EMAIL = 'Reporte ParaguayConnections' #Nombre del emisor
-TO_EMAIL = 'enzoama95@gmail.com','paraguayconnections@gmail.com' 
+FROM_EMAIL = 'Reporte PyConnections' #Nombre del emisor
+TO_EMAIL = 'enzoama95@gmail.com', 'paraguayconnections@gmail.com'
 
 
 # Cron jobs configuration
